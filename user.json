@@ -1,0 +1,14 @@
+{
+  "results": [
+    {
+      "name": "User1",
+      "email": "User1@example.com",
+      "password": "12345678"
+    },
+    {
+      "name": "User2",
+      "email": "User2@example.com",
+      "password": "12345678"
+    }
+  ]
+}

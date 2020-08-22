@@ -1,0 +1,29 @@
+{{!-- <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+</div> --}}
+
+{{#if errors}}
+{{#each errors}}
+<div class="alert alert-danger" role="alert">
+  <strong>{{{this.message}}}</strong>
+</div>
+{{/each}}
+{{/if}}
+
+{{#if success_msg}}
+<div class="alert alert-success" role="alert">
+  <strong>{{{success_msg}}}</strong>
+</div>
+{{/if}}
+
+{{#if warning_msg}}
+<div class="alert alert-warning" role="alert">
+  <strong>{{{warning_msg}}}</strong>
+</div>
+{{/if}}
+
+{{#if error_msg}}
+<div class="alert alert-danger" role="alert">
+  <strong>{{{error_msg}}}</strong>
+</div>
+{{/if}}

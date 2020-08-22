@@ -11,29 +11,33 @@ if (process.env.NODE_ENV !== "production") {
 const db = require('../../config/mongoose')
 
 db.once('open', () => {
-  userList.forEach(user => {
-    bcrypt
+  Promise.all(Array.from({ length: 2 }, (_, i) => {
+    return bcrypt
       .genSalt(10)
-      .then(salt => bcrypt.hash(user.password, salt))
+      .then(salt => bcrypt.hash(userList[i].password, salt))
       .then(hash => User.create({
-        name: user.name,
-        email: user.email,
+        name: userList[i].name,
+        email: userList[i].email,
         password: hash
       }))
       .then(user => {
         const array = []
         const userId = { userId: user._id }
         restaurantList.forEach(data => {
-          if (user.name === 'User1' && data.id <= 4) {
+          if (user.name === 'User1' && data.id < 5) {
             let obj = Object.assign(data, userId)
             array.push(obj)
           }
-          if (user.name === 'User2' && data.id >= 5) {
+          if (user.name === 'User2' && data.id > 4) {
             let obj = Object.assign(data, userId)
             array.push(obj)
           }
         })
-        return Restaurant.create(array)
+        return Promise.all(Array.from({ length: 4 }, (_, i) => Restaurant.create(array[i])))
       })
-  })
+  }))
+    .then(() => {
+      console.log('done')
+      process.exit()
+    })
 })

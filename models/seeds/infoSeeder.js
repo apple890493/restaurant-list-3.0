@@ -49,35 +49,3 @@ db.once('open', () => {
       }
     })
 })
-
-// db.once('open', () => {
-//   Promise.all(Array.from({ length: 2 }, (_, i) => {
-//     return bcrypt
-//       .genSalt(10)
-//       .then(salt => bcrypt.hash(userList[i].password, salt))
-//       .then(hash => User.create({
-//         name: userList[i].name,
-//         email: userList[i].email,
-//         password: hash
-//       }))
-//       .then(user => {
-//         const array = []
-//         const userId = { userId: user._id }
-//         restaurantList.forEach(data => {
-//           if (user.name === 'User1' && data.id < 5) {
-//             let obj = Object.assign(data, userId)
-//             array.push(obj)
-//           }
-//           if (user.name === 'User2' && data.id > 4) {
-//             let obj = Object.assign(data, userId)
-//             array.push(obj)
-//           }
-//         })
-//         return Promise.all(Array.from({ length: 4 }, (_, i) => Restaurant.create(array[i])))
-//       })
-//   }))
-//     .then(() => {
-//       console.log('Seeder already set up')
-//       process.exit()
-//     })
-// })

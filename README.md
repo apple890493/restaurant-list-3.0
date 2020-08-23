@@ -8,7 +8,7 @@
 ## 功能列表
 - 可以以餐廳名稱搜尋
 - 檢視餐廳詳細資訊包含類別、地址、電話、評分、圖片及 Google Map
-- 點選"我的餐廳清單"返回首頁瀏覽全部餐廳資料
+- 點選"FOOD POCKET"返回首頁瀏覽全部餐廳資料
 - 可以新增餐廳、編輯餐廳、刪除餐廳
 
 ## 種子資料
@@ -24,7 +24,7 @@
   `cd restaurant-list-3.0`
 - 下載package
   `npm install`
-- 啟動mongoose
+- 啟動mongoose種子資料
   `npm run seed`
 - 透過nodemon啟動專案
   `npm run dev`
@@ -45,3 +45,4 @@
 - passport: 0.4.1
 - passport-facebook: 3.0.0
 - passport-local: 1.0.0
+

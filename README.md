@@ -3,6 +3,7 @@
 串接驗證系統及第三方登入,提供用戶擁有自己的美食口袋名單
 
 <img src="https://github.com/apple890493/restaurant-list-3.0/blob/master/3A1.JPG" width="350">
+<img src="https://github.com/apple890493/restaurant-list-3.0/blob/master/3A1-2.JPG" width="350">
 
 ## 功能列表
 - 可以以餐廳名稱搜尋

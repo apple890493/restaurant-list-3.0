@@ -74,12 +74,6 @@ router.put('/:id', (req, res) => {
   return Restaurant.findOne({ _id, userId })
     .then(restaurant => {
       restaurant = Object.assign(restaurant, newEdit)
-      // for (let i in newEdit) {
-      //   if (restaurant[i]) {
-      //     restaurant[i] = newEdit[i]
-      //     console.log(restaurant[i]) //test
-      //   }
-      // }
       restaurant.save()
     })
     .then(() => res.redirect(`/restaurants/${_id}/edit`))
